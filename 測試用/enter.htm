@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳垣澔報告區域__登入</title>
-    <style>
-        body{
-            text-align: center;
-        }
-    </style>
+    <title>Login Page</title>
 </head>
 <body>
-    <h1>陳垣澔報告區域__登入</h1>
-    <p>登入失敗請刷新</p>
-    <p>&copy;許元洧製作</p>
+
+    <h2>Login</h2>
+
+    <form action="#" method="post" onsubmit="return validateForm()">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="Login">
+    </form>
 
     <script>
-        var pass = 981210
-        var enter = prompt("輸入提取密碼")
-        if(pass == enter){
-            location.href ="https://docs.google.com/presentation/d/1yhST1GRS3eXA3n-5pyNIvR56JMTXGmDZEaQEexB2LVQ/edit?usp=sharing"
+        function validateForm() {
+            var passwordInput = document.getElementById("password").value;
+
+            // 检查输入的密码是否是22109或22105
+            if (passwordInput === "22109") {
+                window.location.href = "09.htm"; // 导向第一个成功页面
+                return false; // 阻止表单默认提交行为
+            } else if (passwordInput === "22105") {
+                window.location.href = "05.htm"; // 导向第二个成功页面
+                return false; // 阻止表单默认提交行为
+            } else {
+                alert("Invalid password. Please try again.");
+                return false; // 阻止表单默认提交行为
+            }
         }
     </script>
+
 </body>
 </html>
