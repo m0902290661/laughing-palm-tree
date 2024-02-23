@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>登入頁面</title>
 </head>
 <body>
 
-    <h2>Login</h2>
+    <h2>登入</h2>
 
     <form action="#" method="post" onsubmit="return validateForm()">
-        <label for="password">Password:</label>
+        <label for="password">密碼:</label>
         <input type="password" id="password" name="password" required>
-        <br>
-        <input type="submit" value="Login">
+        <input type="submit">
+        <p id="out" style="color: red;"></p>
     </form>
 
     <script>
@@ -27,8 +27,13 @@
             } else if (passwordInput === "22105") {
                 window.location.href = "05.htm"; // 导向第二个成功页面
                 return false; // 阻止表单默认提交行为
-            } else {
-                alert("Invalid password. Please try again.");
+            } 
+            else if (passwordInput === '22118'){
+                location.href = '18.htm'
+                return false;
+            }
+            else {
+                document.getElementById('out').innerHTML='登入失敗'
                 return false; // 阻止表单默认提交行为
             }
         }
